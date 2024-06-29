@@ -2004,7 +2004,7 @@
 <p>No Docker, o <code>entrypoint</code> permite que você configure um ambiente de contêiner que será executado como um executável. É útil para preparar o ambiente, como realizar migrações de banco de dados, antes de iniciar a aplicação propriamente dita. Isso significa que qualquer comando definido no <code>CMD</code> do Dockerfile não será executado automaticamente se um <code>entrypoint</code> estiver definido. Em vez disso, precisamos incluir explicitamente esse comando no script de <code>entrypoint</code>.</p>
 <p><strong>Implementando o Entrypoint</strong></p>
 <p>Criamos um script chamado <code>entrypoint.sh</code> que irá preparar nosso ambiente antes de a aplicação iniciar:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">entrypoin.sh</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">entrypoint.sh</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
 <span class="normal"><a href="#__codelineno-20-2">2</a></span>
 <span class="normal"><a href="#__codelineno-20-3">3</a></span>
 <span class="normal"><a href="#__codelineno-20-4">4</a></span>
@@ -2063,7 +2063,7 @@
 <div class="language-text highlight"><span class="filename">.env</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>POSTGRES_USER=app_user
 </span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>POSTGRES_DB=app_db
 </span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>POSTGRES_PASSWORD=app_password
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>DATABASE_URL=postgresql://app_user:app_password@fastzero_database:5432/app_db
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>DATABASE_URL=postgresql+psycopg://app_user:app_password@fastzero_database:5432/app_db
 </span></code></pre></div>
 <p>Para aplicar essas variáveis, referencie o arquivo <code>.env</code> no <code>compose.yaml</code>:</p>
 <div class="language-yaml highlight"><span class="filename">compose.yaml</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">services</span><span class="p">:</span>
@@ -2139,7 +2139,7 @@
 <p>Isso pode tornar o nosso código mais complicado de testar, por existir um <a href="http://xunitpatterns.com/DOC.html" target="_blank">DoC</a>. Um "componente dependente" para ser executado. Nesse caso, porém, é interno ao sqlalchemy. Para usar o <code>psycopg</code>, temos uma dependência externa ao python, o banco de dados precisa estar sendo executado, caso contrário os testes falharão.</p>
 <h3 id="executando-testes-com-o-banco-de-dados-em-um-container">Executando testes com o banco de dados em um container</h3>
 <p>Os testes contemplam um ciclo de feedback positivo, eles têm que ser executados de forma rápida e eficiente. Adicionar o container do Postgres a nossa aplicação, torna o processo de testes um pouco mais complexo. Pois existe uma dependência ao nível de sistema para os testes serem executados.</p>
-<p>Começaremos começar com o contraexemplo. Vamos alterar o comportamento da fixture do banco de dados para usar o postgres:</p>
+<p>Começaremos com o contraexemplo. Vamos alterar o comportamento da fixture do banco de dados para usar o postgres:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">tests/conftest.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-6"> 6</a></span>
 <span class="normal"><a href="#__codelineno-28-7"> 7</a></span>
 <span class="normal"><a href="#__codelineno-28-8"> 8</a></span>
@@ -2539,7 +2539,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 28, 2024</span>
   </span>
 
     
@@ -2554,7 +2554,7 @@ function resetFieldset(fieldset) {
       
     </span>
     <nav>
-      dunossauro, Lucas Mendes
+      dunossauro, Lucas Mendes, azevedo
     </nav>
   </span>
 
