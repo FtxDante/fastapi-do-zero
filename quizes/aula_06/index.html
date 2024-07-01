@@ -110,11 +110,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#06-autenticacao-e-autorizacao-com-jwt" class="md-skip">
-          Pular para conteúdo
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -953,8 +948,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1121,8 +1114,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -1140,9 +1131,62 @@
   
 
 
-<div><h1 id="06-autenticacao-e-autorizacao-com-jwt">06 - Autenticação e Autorização com JWT</h1>
-<p>O quiz para essa aula ainda não foi lançado.</p>
-<p><a href="../../aulas/sincronas/">Ele estará disponível no dia em que a aula síncrona for ministrada</a></p></div><style type="text/css">.quiz {
+<div><h1>06 - Autenticação e Autorização com JWT</h1>
+<div class="quiz"><h3>01 - Qual a função da 'pwdlib' em nosso projeto?</h3><form><fieldset><div><input type="checkbox" name="answer" value="0" id="quiz-0-0" correct><label for="quiz-0-0">Criar um hash da senha</label></div><div><input type="checkbox" name="answer" value="1" id="quiz-0-1" correct><label for="quiz-0-1">Verificar se o texto limpo bate com o texto sujo</label></div><div><input type="checkbox" name="answer" value="2" id="quiz-0-2"><label for="quiz-0-2">Salvar as senhas em texto limpo</label></div><div><input type="checkbox" name="answer" value="3" id="quiz-0-3"><label for="quiz-0-3">Fazer validação das senhas</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
+
+<p>
+    </p><div class="quiz"><h3>02 - Qual a necessidade de adicionar a linha em destaque no endpoint de PUT?</h3>
+    <div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">'/users/</span><span class="si">{user_id}</span><span class="s1">'</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">UserPublic</span><span class="p">)</span>
+<span class="c1"># ...</span>
+    <span class="n">db_user</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">username</span>
+<span class="hll">    <span class="n">db_user</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">get_password_hash</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
+</span>    <span class="n">db_user</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span>
+</code></pre></div>
+    <form>
+    <fieldset>
+
+            <div>
+            <input type="radio" name="answer" value="Validar a senha no momento do update" id="a">
+            <label for="a">Validar a senha no momento do update</label>
+            </div>
+
+
+            <div>
+            <input type="radio" name="answer" value="Criar o hash da senha durante a atualização" id="b" correct="">
+            <label for="b">Criar o hash da senha durante a atualização</label>
+            </div>
+
+
+            <div>
+            <input type="radio" name="answer" value="Pegar a senha antiga durante o update" id="c">
+            <label for="c">Pegar a senha antiga durante o update</label>
+            </div>
+
+
+            <div>
+            <input type="radio" name="answer" value="Salvar a senha de forma limpa no banco de dados" id="d">
+            <label for="d">Salvar a senha de forma limpa no banco de dados</label>
+            </div>
+
+    </fieldset>
+    <button type="submit" class="quiz-button">Enviar</button>
+    </form>
+    <section class="content hidden"></section>
+    </div>
+    
+<div class="quiz"><h3>03 - Qual o propósito da autenticação?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0"><label for="quiz-1-0">Fornecer um mecanismo de tokens</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" correct><label for="quiz-1-1">Validar que o cliente é quem diz ser</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2"><label for="quiz-1-2">Garantir que só pessoas autorizadas possam executar ações</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
+
+<div class="quiz"><h3>04 - Qual a função do endpoint '/token'?</h3><form><fieldset><div><input type="checkbox" name="answer" value="0" id="quiz-2-0"><label for="quiz-2-0">Gerenciar a autorização do cliente</label></div><div><input type="checkbox" name="answer" value="1" id="quiz-2-1" correct><label for="quiz-2-1">Fazer a autenticação do cliente</label></div><div><input type="checkbox" name="answer" value="2" id="quiz-2-2" correct><label for="quiz-2-2">Renovar o token JWT</label></div><div><input type="checkbox" name="answer" value="3" id="quiz-2-3"><label for="quiz-2-3">Todas as respostas estão corretas</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
+
+<div class="quiz"><h3>05 - O 'OAuth2PasswordRequestForm' fornece:</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0"><label for="quiz-3-0">Um formulário de cadastro</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" correct><label for="quiz-3-1">Um formulário de autenticação</label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2"><label for="quiz-3-2">Um formulário de autorização</label></div><div><input type="radio" name="answer" value="3" id="quiz-3-3"><label for="quiz-3-3">Um formulário de alteração de registro</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
+
+<div class="quiz"><h3>06 - Qual a função do token JWT?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0"><label for="quiz-4-0">Fornecer informações sobre o cliente para o servidor</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1"><label for="quiz-4-1">Gerenciar o tempo de validade do token</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2"><label for="quiz-4-2">Carregar dados sobre autorização</label></div><div><input type="radio" name="answer" value="3" id="quiz-4-3" correct><label for="quiz-4-3">Todas as respostas estão corretas</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
+
+<div class="quiz"><h3>07 - Qual o objetivo da claim 'sub'?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0"><label for="quiz-5-0">Guardar o tempo de validade do token</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1"><label for="quiz-5-1">Identificar o servidor que gerou o token</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" correct><label for="quiz-5-2">Identificar qual cliente gerou o token</label></div><div><input type="radio" name="answer" value="3" id="quiz-5-3"><label for="quiz-5-3">Identificar o email do cliente</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
+
+<div class="quiz"><h3>08 - Qual a função da 'secret_key'?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-6-0"><label for="quiz-6-0">Usar como base para criptografar a senha do cliente com Argon2</label></div><div><input type="radio" name="answer" value="1" id="quiz-6-1"><label for="quiz-6-1">Usar como base para geração do HTTPS</label></div><div><input type="radio" name="answer" value="2" id="quiz-6-2" correct><label for="quiz-6-2">Ussar como base para assinar o Token com HS256</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
+
+<div class="quiz"><h3>09 - Qual o objetivo da função 'current_user'?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-7-0"><label for="quiz-7-0">Gerenciar a autenticação dos clientes</label></div><div><input type="radio" name="answer" value="1" id="quiz-7-1"><label for="quiz-7-1">Validar o token JWT</label></div><div><input type="radio" name="answer" value="2" id="quiz-7-2" correct><label for="quiz-7-2">Gerenciar a autorização dos endpoints</label></div><div><input type="radio" name="answer" value="3" id="quiz-7-3"><label for="quiz-7-3">Saber que é o usuário logado</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div></div><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -1273,7 +1317,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 1, 2024</span>
   </span>
 
     
