@@ -2165,7 +2165,7 @@
 </span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11"></a><span class="kn">from</span> <span class="nn">tests.factories</span> <span class="kn">import</span> <span class="n">UserFactory</span>
 </span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12"></a>
 </span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13"></a>
-</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">()</span>
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 </span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15"></a><span class="k">def</span> <span class="nf">session</span><span class="p">():</span>
 </span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16"></a><span class="hll">    <span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">Settings</span><span class="p">()</span><span class="o">.</span><span class="n">DATABASE_URL</span><span class="p">)</span>
 </span></span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17"></a>    <span class="n">table_registry</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">create_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
@@ -2293,7 +2293,7 @@
 </span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
 </span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="c1"># ...</span>
 </span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
-</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">()</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 </span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="k">def</span> <span class="nf">session</span><span class="p">():</span>
 </span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="hll">    <span class="k">with</span> <span class="n">PostgresContainer</span><span class="p">(</span><span class="s1">'postgres:16'</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">'psycopg'</span><span class="p">)</span> <span class="k">as</span> <span class="n">postgres</span><span class="p">:</span> <span class="c1">#(2)!</span>
 </span></span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="hll">        <span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">postgres</span><span class="o">.</span><span class="n">get_connection_url</span><span class="p">())</span> <span class="c1">#(3)!</span>
@@ -2334,7 +2334,7 @@
 <span class="normal"><a href="#__codelineno-38-4">4</a></span>
 <span class="normal"><a href="#__codelineno-38-5">5</a></span>
 <span class="normal"><a href="#__codelineno-38-6">6</a></span>
-<span class="normal"><a href="#__codelineno-38-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">()</span>
+<span class="normal"><a href="#__codelineno-38-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 </span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2"></a><span class="k">def</span> <span class="nf">fixture_de_exemplo</span><span class="p">():</span>
 </span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3"></a>    <span class="c1"># arrange</span>
 </span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4"></a><span class="hll">    <span class="k">yield</span>
@@ -2375,7 +2375,7 @@
 <li>Inicia a conexão com o banco de dados. A <code>Session</code> originalmente inicia a conexão e a fecha. Contudo, como vamos criar diversas sessions, é interessante que o controle da conexão seja gerenciado pela engine.</li>
 </ol>
 <p>Desta forma, por consequência, não iremos mais definir a engine na fixture de <code>session</code>. Usaremos a fixture de engine, que será criada somente uma vez durante toda a execução dos testes:</p>
-<div class="language-python highlight"><span class="filename">tests/conftest.py</span><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">()</span>
+<div class="language-python highlight"><span class="filename">tests/conftest.py</span><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 </span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="hll"><span class="k">def</span> <span class="nf">session</span><span class="p">(</span><span class="n">engine</span><span class="p">):</span><span class="c1">#(1)!</span>
 </span></span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>    <span class="n">table_registry</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">create_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
 </span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>
@@ -2539,7 +2539,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 28, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 10, 2024</span>
   </span>
 
     
