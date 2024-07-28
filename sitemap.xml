@@ -76,7 +76,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://fastapidozero.dunossauro.com/apendices/instalacoes/</loc>
+         <loc>https://fastapidozero.dunossauro.com/apendices/a_instalacoes/</loc>
+         <lastmod>2024-07-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://fastapidozero.dunossauro.com/apendices/b_proximos_passos/</loc>
          <lastmod>2024-07-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
