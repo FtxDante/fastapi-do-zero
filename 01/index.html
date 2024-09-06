@@ -2148,8 +2148,8 @@ Esse comando diz ao uvicorn o seguinte: na pasta fast_zero existe um arquivo cha
 <span class="normal"><a href="#__codelineno-36-40">40</a></span>
 <span class="normal"><a href="#__codelineno-36-41">41</a></span>
 <span class="normal"><a href="#__codelineno-36-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-36-36"><a id="__codelineno-36-36" name="__codelineno-36-36"></a><span class="k">[tool.taskipy.tasks]</span>
-</span><span id="__span-36-37"><a id="__codelineno-36-37" name="__codelineno-36-37"></a><span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ruff check . &amp;&amp; ruff check . --diff'</span>
-</span><span id="__span-36-38"><a id="__codelineno-36-38" name="__codelineno-36-38"></a><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ruff check . --fix &amp;&amp; ruff format .'</span>
+</span><span id="__span-36-37"><a id="__codelineno-36-37" name="__codelineno-36-37"></a><span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ruff check .; ruff check . --diff'</span>
+</span><span id="__span-36-38"><a id="__codelineno-36-38" name="__codelineno-36-38"></a><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ruff check . --fix; ruff format .'</span>
 </span><span id="__span-36-39"><a id="__codelineno-36-39" name="__codelineno-36-39"></a><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'fastapi dev fast_zero/app.py'</span>
 </span><span id="__span-36-40"><a id="__codelineno-36-40" name="__codelineno-36-40"></a><span class="n">pre_test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'task lint'</span>
 </span><span id="__span-36-41"><a id="__codelineno-36-41" name="__codelineno-36-41"></a><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'pytest -s -x --cov=fast_zero -vv'</span>
@@ -2233,15 +2233,15 @@ Esse comando diz ao uvicorn o seguinte: na pasta fast_zero existe um arquivo cha
 </span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6"></a><span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"README.md"</span>
 </span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7"></a>
 </span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8"></a><span class="k">[tool.poetry.dependencies]</span>
-</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9"></a><span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"3.12.*"</span><span class="w">  </span><span class="c1"># ou 3.11.*</span>
-</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10"></a><span class="n">fastapi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"^0.111.0"</span>
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9"></a><span class="n">python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"3.12.*"</span><span class="w"> </span><span class="c1"># ou "3.11.*"</span>
+</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10"></a><span class="n">fastapi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"^0.113.0"</span>
 </span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11"></a>
 </span><span id="__span-37-12"><a id="__codelineno-37-12" name="__codelineno-37-12"></a><span class="k">[tool.poetry.group.dev.dependencies]</span>
-</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13"></a><span class="n">pytest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"^8.2.2"</span>
+</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13"></a><span class="n">pytest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"^8.3.2"</span>
 </span><span id="__span-37-14"><a id="__codelineno-37-14" name="__codelineno-37-14"></a><span class="n">pytest-cov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"^5.0.0"</span>
 </span><span id="__span-37-15"><a id="__codelineno-37-15" name="__codelineno-37-15"></a><span class="n">taskipy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"^1.13.0"</span>
-</span><span id="__span-37-16"><a id="__codelineno-37-16" name="__codelineno-37-16"></a><span class="n">ruff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"^0.5.1"</span>
-</span><span id="__span-37-17"><a id="__codelineno-37-17" name="__codelineno-37-17"></a><span class="n">httpx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"^0.27.0"</span>
+</span><span id="__span-37-16"><a id="__codelineno-37-16" name="__codelineno-37-16"></a><span class="n">ruff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"^0.6.4"</span>
+</span><span id="__span-37-17"><a id="__codelineno-37-17" name="__codelineno-37-17"></a><span class="n">httpx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"^0.27.2"</span>
 </span><span id="__span-37-18"><a id="__codelineno-37-18" name="__codelineno-37-18"></a>
 </span><span id="__span-37-19"><a id="__codelineno-37-19" name="__codelineno-37-19"></a><span class="k">[tool.ruff]</span>
 </span><span id="__span-37-20"><a id="__codelineno-37-20" name="__codelineno-37-20"></a><span class="n">line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">79</span>
@@ -2260,8 +2260,8 @@ Esse comando diz ao uvicorn o seguinte: na pasta fast_zero existe um arquivo cha
 </span><span id="__span-37-33"><a id="__codelineno-37-33" name="__codelineno-37-33"></a><span class="n">addopts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'-p no:warnings'</span>
 </span><span id="__span-37-34"><a id="__codelineno-37-34" name="__codelineno-37-34"></a>
 </span><span id="__span-37-35"><a id="__codelineno-37-35" name="__codelineno-37-35"></a><span class="k">[tool.taskipy.tasks]</span>
-</span><span id="__span-37-36"><a id="__codelineno-37-36" name="__codelineno-37-36"></a><span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ruff check . &amp;&amp; ruff check . --diff'</span>
-</span><span id="__span-37-37"><a id="__codelineno-37-37" name="__codelineno-37-37"></a><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ruff check . --fix &amp;&amp; ruff format .'</span>
+</span><span id="__span-37-36"><a id="__codelineno-37-36" name="__codelineno-37-36"></a><span class="n">lint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ruff check .; ruff check . --diff'</span>
+</span><span id="__span-37-37"><a id="__codelineno-37-37" name="__codelineno-37-37"></a><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ruff check . --fix; ruff format .'</span>
 </span><span id="__span-37-38"><a id="__codelineno-37-38" name="__codelineno-37-38"></a><span class="n">run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'fastapi dev fast_zero/app.py'</span>
 </span><span id="__span-37-39"><a id="__codelineno-37-39" name="__codelineno-37-39"></a><span class="n">pre_test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'task lint'</span>
 </span><span id="__span-37-40"><a id="__codelineno-37-40" name="__codelineno-37-40"></a><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'pytest -s -x --cov=fast_zero -vv'</span>
@@ -2702,7 +2702,7 @@ function resetFieldset(fieldset) {
       
     </span>
     <nav>
-      dunossauro, Marcelo Machado, Julio Formiga, Renne Rocha, Andre Pereira, Vinícius Dionysio, Rodrigo Barretos, Adorilson Bezerra
+      dunossauro, Marcelo Machado, Julio Formiga, Andre Pereira, Renne Rocha, Vinícius Dionysio, Rodrigo Barretos, Adorilson Bezerra
     </nav>
   </span>
 
