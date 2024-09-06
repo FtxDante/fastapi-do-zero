@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://fastapidozero.dunossauro.com/quizes/aula_03/">
+        <link rel="canonical" href="https://fastapidozero.dunossauro.com/exercicios_resolvidos/aula_04/">
       
       
-        <link rel="prev" href="../aula_02/">
+        <link rel="prev" href="../aula_03/">
       
       
-        <link rel="next" href="../aula_04/">
+        <link rel="next" href="../../projetos/projetos_finais/">
       
       
       <link rel="icon" href="../../assets/logo.svg">
@@ -22,7 +22,7 @@
     
     
       
-        <title>03 - Estruturando o Projeto e Criando Rotas CRUD - FastAPI do Zero</title>
+        <title>Exercícios da aula 04 - FastAPI do Zero</title>
       
     
     
@@ -59,11 +59,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="03 - Estruturando o Projeto e Criando Rotas CRUD - FastAPI do Zero" >
+        <meta  property="og:title"  content="Exercícios da aula 04 - FastAPI do Zero" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://fastapidozero.dunossauro.com/assets/images/social/quizes/aula_03.png" >
+        <meta  property="og:image"  content="https://fastapidozero.dunossauro.com/assets/images/social/exercicios_resolvidos/aula_04.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,15 +71,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://fastapidozero.dunossauro.com/quizes/aula_03/" >
+        <meta  property="og:url"  content="https://fastapidozero.dunossauro.com/exercicios_resolvidos/aula_04/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="03 - Estruturando o Projeto e Criando Rotas CRUD - FastAPI do Zero" >
+        <meta  name="twitter:title"  content="Exercícios da aula 04 - FastAPI do Zero" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://fastapidozero.dunossauro.com/assets/images/social/quizes/aula_03.png" >
+        <meta  name="twitter:image"  content="https://fastapidozero.dunossauro.com/assets/images/social/exercicios_resolvidos/aula_04.png" >
       
     
     
@@ -141,6 +141,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#exercicios-da-aula-04" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -172,7 +177,7 @@
 		<div class="md-header__topic" data-md-component="header-topic">
 		    <span class="md-ellipsis">
 			
-			03 - Estruturando o Projeto e Criando Rotas CRUD
+			Exercícios da aula 04
 			
 		    </span>
 		</div>
@@ -798,17 +803,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
         
           
           <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
@@ -822,7 +829,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_18">
             <span class="md-nav__icon md-icon"></span>
             Exercicios resolvidos
@@ -836,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exercicios_resolvidos/aula_01/" class="md-nav__link">
+      <a href="../aula_01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -857,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exercicios_resolvidos/aula_02/" class="md-nav__link">
+      <a href="../aula_02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -878,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exercicios_resolvidos/aula_03/" class="md-nav__link">
+      <a href="../aula_03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -896,10 +903,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../exercicios_resolvidos/aula_04/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Exercícios da aula 04
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -908,6 +935,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercício 01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solução
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercício 02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solucao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solução
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercício 03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solucao_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solução
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1008,19 +1127,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
         
           
           <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
@@ -1034,7 +1151,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_20">
             <span class="md-nav__icon md-icon"></span>
             Quizes
@@ -1048,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aula_01/" class="md-nav__link">
+      <a href="../../quizes/aula_01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1069,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aula_02/" class="md-nav__link">
+      <a href="../../quizes/aula_02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1087,17 +1204,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../quizes/aula_03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1106,7 +1216,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1119,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aula_04/" class="md-nav__link">
+      <a href="../../quizes/aula_04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1140,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aula_05/" class="md-nav__link">
+      <a href="../../quizes/aula_05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1161,7 +1270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aula_06/" class="md-nav__link">
+      <a href="../../quizes/aula_06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1182,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aula_07/" class="md-nav__link">
+      <a href="../../quizes/aula_07/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1203,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aula_08/" class="md-nav__link">
+      <a href="../../quizes/aula_08/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1224,7 +1333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aula_09/" class="md-nav__link">
+      <a href="../../quizes/aula_09/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1245,7 +1354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aula_10/" class="md-nav__link">
+      <a href="../../quizes/aula_10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1266,7 +1375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aula_11/" class="md-nav__link">
+      <a href="../../quizes/aula_11/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1287,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aula_12/" class="md-nav__link">
+      <a href="../../quizes/aula_12/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1325,6 +1434,88 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 01
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercício 01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solução
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-02" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 02
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercício 02">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solucao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solução
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercício 03
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercício 03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solucao_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solução
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1342,122 +1533,142 @@
   
 
 
-<div><h1>03 - Estruturando o Projeto e Criando Rotas CRUD</h1>
-<div class="quiz"><h3>01 - O método POST pode ser associado a qual letra da sigla CRUD?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0"><label for="quiz-0-0">U</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1"><label for="quiz-0-1">D</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" correct><label for="quiz-0-2">C</label></div><div><input type="radio" name="answer" value="3" id="quiz-0-3"><label for="quiz-0-3">R</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
-
-<div class="quiz"><h3>02 - Quando um recurso é criado via POST, qual o Status deve ser retornado para sucesso?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0"><label for="quiz-1-0">200</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" correct><label for="quiz-1-1">201</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2"><label for="quiz-1-2">202</label></div><div><input type="radio" name="answer" value="3" id="quiz-1-3"><label for="quiz-1-3">301</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
-
-<div class="quiz"><h3>03 - Quando um schema não é respeitado pelo cliente, qual o status retornado?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0"><label for="quiz-2-0">500</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1"><label for="quiz-2-1">404</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2"><label for="quiz-2-2">401</label></div><div><input type="radio" name="answer" value="3" id="quiz-2-3" correct><label for="quiz-2-3">422</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
-
-<div class="quiz"><h3>04 - O FastAPI retorna qual status para quando o servidor não respeita o contrato? </h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0"><label for="quiz-3-0">UNPROCESSABLE ENTITY</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1"><label for="quiz-3-1">I'M A TEAPOT</label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" correct><label for="quiz-3-2">INTERNAL SERVER ERROR</label></div><div><input type="radio" name="answer" value="3" id="quiz-3-3"><label for="quiz-3-3">NOT IMPLEMENTED</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
-
-<p>
-    </p><div class="quiz"><h3>05 - O que faz a seguinte fixture</h3>
-    <div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<span class="k">def</span> <span class="nf">client</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">TestClient</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-</code></pre></div>
-    <form>
-    <fieldset>
-
-            <div>
-            <input type="radio" name="answer" value="Faz uma requisição a aplicação" id="a">
-            <label for="a">Faz uma requisição a aplicação</label>
-            </div>
-
-
-            <div>
-            <input type="radio" name="answer" value="Cria um cliente de teste reutilizável" id="b" correct="">
-            <label for="b">Cria um cliente de teste reutilizável</label>
-            </div>
-
-
-            <div>
-            <input type="radio" name="answer" value="Faz o teste automaticamente" id="c">
-            <label for="c">Faz o teste automaticamente</label>
-            </div>
-
-    </fieldset>
-    <button type="submit" class="quiz-button">Enviar</button>
-    </form>
-    <section class="content hidden"></section>
-    </div>
-    
-<div class="quiz"><h3>06 - Qual código de resposta deve ser enviado quando o recurso requerido não for encontrado?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0"><label for="quiz-4-0">201</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" correct><label for="quiz-4-1">404</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2"><label for="quiz-4-2">401</label></div><div><input type="radio" name="answer" value="3" id="quiz-4-3"><label for="quiz-4-3">500</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
-
-<p>
-    </p><div class="quiz"><h3>07 - Sobre o relacionamento dos schemas, qual seria a resposta esperada pelo cliente em UserList?</h3>
-    <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">UserPublic</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span>
-
-
-<span class="k">class</span> <span class="nc">UserList</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">UserPublic</span><span class="p">]</span>
-</code></pre></div>
-    <form>
-    <fieldset>
-
-            <div>
-            <input type="radio" name="answer" value="{" users id="a">
-            <label for="a">{"users": {"username": "string", "email": "e@mail.com"}}</label>
-            </div>
-
-
-            <div>
-            <input type="radio" name="answer" value="{" users id="b" correct="">
-            <label for="b">{"users": [{"username": "string", "email": "e@mail.com"}]}</label>
-            </div>
-
-
-            <div>
-            <input type="radio" name="answer" value="As duas estão corretas" id="c">
-            <label for="c">As duas estão corretas</label>
-            </div>
-
-    </fieldset>
-    <button type="submit" class="quiz-button">Enviar</button>
-    </form>
-    <section class="content hidden"></section>
-    </div>
-    
-<div class="quiz"><h3>08 - HTTPException tem a função de:</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0"><label for="quiz-5-0">Criar um erro de servidor</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" correct><label for="quiz-5-1">Retornar um erro ao cliente</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2"><label for="quiz-5-2">Fazer uma validação HTTP</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
-
-<div class="quiz"><h3>09 - 'users/{user_id}' permite:</h3><form><fieldset><div><input type="checkbox" name="answer" value="0" id="quiz-6-0" correct><label for="quiz-6-0">Parametrizar a URL</label></div><div><input type="checkbox" name="answer" value="1" id="quiz-6-1" correct><label for="quiz-6-1">Pedir por um recurso com id específico</label></div><div><input type="checkbox" name="answer" value="2" id="quiz-6-2" correct><label for="quiz-6-2">Aumentar a flexibilidade dos endpoints</label></div></fieldset><button type="submit" class="quiz-button">Enviar</button></form><section class="content hidden"></section></div>
-
-<p>
-    </p><div class="quiz"><h3>10 - Qual a função desse bloco de código nos endpoints de PUT E DELETE?</h3>
-    <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">user_id</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">database</span><span class="p">)</span> <span class="ow">or</span> <span class="n">user_id</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span>
-        <span class="n">status_code</span><span class="o">=</span><span class="n">HTTPStatus</span><span class="o">.</span><span class="n">NOT_FOUND</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s1">'User not found'</span>
-    <span class="p">)</span>
-</code></pre></div>
-    <form>
-    <fieldset>
-
-            <div>
-            <input type="radio" name="answer" value="Garantir que só sejam chamados id válidos" id="a" correct="">
-            <label for="a">Garantir que só sejam chamados id válidos</label>
-            </div>
-
-
-            <div>
-            <input type="radio" name="answer" value="Montar um novo schema do pydantic" id="b">
-            <label for="b">Montar um novo schema do pydantic</label>
-            </div>
-
-
-            <div>
-            <input type="radio" name="answer" value="Criar um erro de servidor" id="c">
-            <label for="c">Criar um erro de servidor</label>
-            </div>
-
-    </fieldset>
-    <button type="submit" class="quiz-button">Enviar</button>
-    </form>
-    <section class="content hidden"></section>
-    </div>
-    </div><style type="text/css">.quiz {
+<div><h1 id="exercicios-da-aula-04">Exercícios da aula 04</h1>
+<h2 id="exercicio-01">Exercício 01</h2>
+<p>Fazer uma alteração no modelo (tabela <code>User</code>) e adicionar um campo chamado <code>updated_at</code>:</p>
+<ul>
+<li>Esse campo deve ser mapeado para o tipo <code>datetime</code></li>
+<li>Esse campo não deve ser inicializado por padrão <code>init=False</code></li>
+<li>O valor padrão deve ser <code>now</code></li>
+<li>Toda vez que a tabela for atualizada esse campo deve ser atualizado:
+  <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">mapped_column</span><span class="p">(</span><span class="n">onupdate</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+</span></code></pre></div></li>
+</ul>
+<h3 id="solucao">Solução</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nd">@table_registry</span><span class="o">.</span><span class="n">mapped_as_dataclass</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">'users'</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="nb">id</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped_column</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">username</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped_column</span><span class="p">(</span><span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">password</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">email</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped_column</span><span class="p">(</span><span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">created_at</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped_column</span><span class="p">(</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">server_default</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="p">)</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="hll">    <span class="n">updated_at</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped_column</span><span class="p">(</span>  <span class="c1"># Exercício</span>
+</span></span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="hll">        <span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">server_default</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span> <span class="n">onupdate</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</span></span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="hll">    <span class="p">)</span>
+</span></span></code></pre></div>
+<h2 id="exercicio-02">Exercício 02</h2>
+<p>Criar uma nova migração autogerada com alembic.</p>
+<h3 id="solucao_1">Solução</h3>
+<p>Comando explicado na aula para gerar uma migração automática:</p>
+<div class="language-shell highlight"><span class="filename">$ Execução no terminal!</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>alembic<span class="w"> </span>revision<span class="w"> </span>--autogenerate<span class="w"> </span>-m<span class="w"> </span><span class="s2">"exercicio 02 aula 04"</span>
+</span></code></pre></div>
+<p>O Comando deve retornar algo parecido com isso:
+</p><div class="language-shell highlight"><span class="filename">Resultado do comando</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>INFO<span class="w">  </span><span class="o">[</span>alembic.runtime.migration<span class="o">]</span><span class="w"> </span>Context<span class="w"> </span>impl<span class="w"> </span>SQLiteImpl.
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>INFO<span class="w">  </span><span class="o">[</span>alembic.runtime.migration<span class="o">]</span><span class="w"> </span>Will<span class="w"> </span>assume<span class="w"> </span>non-transactional<span class="w"> </span>DDL.
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>INFO<span class="w">  </span><span class="o">[</span>alembic.autogenerate.compare<span class="o">]</span><span class="w"> </span>Detected<span class="w"> </span>added<span class="w"> </span>column<span class="w"> </span><span class="s1">'users.updated_at'</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>Generating<span class="w"> </span>/home/dunossauro/git/fastapi-do-
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span>zero/codigo_das_aulas/04/migrations/versions/bb77f9679811_exercicio_02_aula_04.py<span class="w"> </span>...<span class="w">  </span><span class="k">done</span>
+</span></code></pre></div>
+<p>O arquivo de migrações deve se parecer com esse:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">/migrations/versions/bb77f9679811_exercicio_02_aula_04.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="sd">"""exercicio 02 aula 04</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="sd">Revision ID: bb77f9679811</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="sd">Revises: 74f39286e2f6</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="sd">Create Date: ...</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="sd">"""</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Union</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="kn">from</span> <span class="nn">alembic</span> <span class="kn">import</span> <span class="n">op</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="c1"># revision identifiers, used by Alembic.</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="n">revision</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'bb77f9679811'</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="n">down_revision</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'74f39286e2f6'</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="n">branch_labels</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="n">depends_on</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="k">def</span> <span class="nf">upgrade</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a>    <span class="c1"># ### commands auto generated by Alembic - please adjust! ###</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="hll">    <span class="n">op</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="n">sa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s1">'updated_at'</span><span class="p">,</span> <span class="n">sa</span><span class="o">.</span><span class="n">DateTime</span><span class="p">(),</span> <span class="n">server_default</span><span class="o">=</span><span class="n">sa</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">'(CURRENT_TIMESTAMP)'</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span> <span class="c1">#(1)!</span>
+</span></span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a>    <span class="c1"># ### end Alembic commands ###</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="k">def</span> <span class="nf">downgrade</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a>    <span class="c1"># ### commands auto generated by Alembic - please adjust! ###</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="hll">    <span class="n">op</span><span class="o">.</span><span class="n">drop_column</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="s1">'updated_at'</span><span class="p">)</span> <span class="c1">#(2)!</span>
+</span></span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a>    <span class="c1"># ### end Alembic commands ###</span>
+</span></code></pre></div></td></tr></table></div>
+<ol>
+<li>Adiciona a coluna <code>updated_at</code> na tabela <code>users</code></li>
+<li>Remove a coluna <code>updated_at</code> na tabela <code>users</code></li>
+</ol>
+<h2 id="exercicio-03">Exercício 03</h2>
+<p>Aplicar essa migração ao banco de dados</p>
+<h3 id="solucao_2">Solução</h3>
+<p>Para aplicar a ultima migração devemos nos mover até a head:</p>
+<div class="language-shell highlight"><span class="filename">$ Execução no terminal!</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>alembic<span class="w"> </span>upgrade<span class="w"> </span>head
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>INFO<span class="w">  </span><span class="o">[</span>alembic.runtime.migration<span class="o">]</span><span class="w"> </span>Context<span class="w"> </span>impl<span class="w"> </span>SQLiteImpl.
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>INFO<span class="w">  </span><span class="o">[</span>alembic.runtime.migration<span class="o">]</span><span class="w"> </span>Will<span class="w"> </span>assume<span class="w"> </span>non-transactional<span class="w"> </span>DDL.
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>INFO<span class="w">  </span><span class="o">[</span>alembic.runtime.migration<span class="o">]</span><span class="w"> </span>Running<span class="w"> </span>upgrade<span class="w"> </span>74f39286e2f6<span class="w"> </span>-&gt;<span class="w"> </span>bb77f9679811,<span class="w"> </span>exercicio<span class="w"> </span><span class="m">02</span><span class="w"> </span>aula<span class="w"> </span><span class="m">04</span>
+</span></code></pre></div>
+<p>Checando o resultado no schema do banco de dados:</p>
+<div class="language-sql highlight"><span class="filename">$ Execução no terminal!</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">sqlite3</span><span class="w"> </span><span class="k">database</span><span class="p">.</span><span class="n">db</span><span class="w"> </span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">SQLite</span><span class="w"> </span><span class="k">version</span><span class="w"> </span><span class="mi">3</span><span class="p">.</span><span class="mi">46</span><span class="p">.</span><span class="mi">1</span><span class="w"> </span><span class="mi">2024</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">13</span><span class="w"> </span><span class="mi">09</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">08</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">Enter</span><span class="w"> </span><span class="ss">".help"</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">usage</span><span class="w"> </span><span class="n">hints</span><span class="p">.</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="k">schema</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">alembic_version</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="n">version_num</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">alembic_version_pkc</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">version_num</span><span class="p">)</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">);</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">        </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">        </span><span class="n">username</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="n">password</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">        </span><span class="n">email</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">        </span><span class="n">created_at</span><span class="w"> </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="p">(</span><span class="k">CURRENT_TIMESTAMP</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="hll"><span class="w">        </span><span class="n">updated_at</span><span class="w"> </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="p">(</span><span class="k">CURRENT_TIMESTAMP</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span>
+</span></span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">        </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">        </span><span class="k">UNIQUE</span><span class="w"> </span><span class="p">(</span><span class="n">email</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">        </span><span class="k">UNIQUE</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="p">);</span>
+</span></code></pre></div>
+<p>Podemos ver que o campo <code>updated_at</code> foi criado com o tipo <code>DATETIME</code> e com o valor padrão para <code>CURRENT_TIMESTAMP</code>, assim como no <code>created_at</code>.</p></div><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
@@ -1588,7 +1799,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 6, 2024</span>
   </span>
 
     
@@ -1599,11 +1810,11 @@ function resetFieldset(fieldset) {
   <span class="md-source-file__fact">
     <span class="md-icon" title="Contribuidores">
       
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.54 5.54 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13zM0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20zm24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
       
     </span>
     <nav>
-      dunossauro, Elias Santana
+      dunossauro
     </nav>
   </span>
 
