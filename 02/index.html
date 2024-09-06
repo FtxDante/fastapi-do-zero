@@ -2225,7 +2225,7 @@
 <p>Assim como o Swagger UI, o <a href="https://redocly.github.io/redoc/" target="_blank">Redoc</a> é outra ferramenta popular para visualizar a documentação de APIs OpenAPI, mas com um foco em uma apresentação mais limpa e legível. Para acessar a documentação Redoc da nossa aplicação, podemos visitar o endereço <a href="http://127.0.0.1:8000/redoc" target="_blank">http://127.0.0.1:8000/redoc</a>. O Redoc organiza a documentação de uma maneira mais linear e de fácil leitura, destacando as descrições dos endpoints, os métodos HTTP disponíveis, os schemas dos dados de entrada e saída, além de exemplos de requisições e respostas.</p>
 <p><a class="glightbox" href="../assets/02/captura_de_tela_do_redoc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Captura de tela da página inicial do Redoc" class="center shadow" src="../assets/02/captura_de_tela_do_redoc.png"></a></p>
 <h2 id="trafegando-json">Trafegando JSON</h2>
-<p>Quando discutimos APIs "modernas"<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, nos referimos a APIs que priorizam o tráfego de dados, deixando de lado a camada de apresentação, como o <a href="#html">HTML</a>. O objetivo é transmitir dados de forma agnóstica para diferentes tipos de clientes. Nesse contexto, o JSON (JavaScript Object Notation) se tornou a mídia padrão, graças à sua leveza e facilidade de leitura tanto por humanos quanto por máquinas.</p>
+<p>Quando discutimos APIs "modernas"<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, nos referimos a APIs que priorizam o tráfego de dados, deixando de lado a camada de apresentação, como o <a href="#html">HTML</a>. O objetivo é transmitir dados de forma agnóstica para diferentes tipos de clientes. Nesse contexto, o JSON (JavaScript Object Notation) se tornou a mídia padrão, graças à sua leveza e facilidade de leitura tanto por humanos quanto por máquinas.</p>
 <p>O JSON é apreciado por sua simplicidade, apresentando dados em estruturas de documento chave-valor, onde os valores podem ser strings, números, booleanos, arrays, entre outros.</p>
 <p>Abaixo, um exemplo ilustra o formato JSON:</p>
 <div class="language-json highlight"><span class="filename">Exemplo de um JSON</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
@@ -2357,7 +2357,10 @@
 <hr>
 <ol>
 <li id="fn:1">
-<p>Apesar da noção comum de que APIs modernas são projetadas para trafegar JSON, existem debates intensos sobre as melhores práticas para a transferência de dados em APIs. Uma leitura recomendada é o livro <a href="https://hypermedia.systems/" target="_blank">hypermedia systems</a>, que é gratuito e oferece percepções valiosas. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>O código 209 não é um status code válido no http, por isso o usei como exemplo. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Apesar da noção comum de que APIs modernas são projetadas para trafegar JSON, existem debates intensos sobre as melhores práticas para a transferência de dados em APIs. Uma leitura recomendada é o livro <a href="https://hypermedia.systems/" target="_blank">hypermedia systems</a>, que é gratuito e oferece percepções valiosas. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 </ol>
 </div></div><style type="text/css">.quiz {
@@ -2491,7 +2494,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 19, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 6, 2024</span>
   </span>
 
     
