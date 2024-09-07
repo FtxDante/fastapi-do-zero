@@ -1275,6 +1275,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios_resolvidos/aula_06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios da aula 06
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2020,6 +2041,12 @@
 <hr>
 <p>Boas-vindas de volta à nossa série de aulas sobre a construção de uma aplicação utilizando FastAPI. Na última aula, abordamos conceitos básicos do desenvolvimento web e finalizamos a configuração do nosso ambiente. Hoje, avançaremos na estruturação dos primeiros endpoints da nossa API, concentrando-nos nas quatro operações fundamentais de <strong>CRUD</strong> - Criar, Ler, Atualizar e Deletar. Exploraremos como estas operações se aplicam tanto à comunicação web quanto à interação com o banco de dados.</p>
 <p>O objetivo desta aula é implementar um sistema de cadastro de usuários na nossa aplicação. Ao final, você conseguirá cadastrar, listar, alterar e deletar usuários, além de realizar testes para validar estas funcionalidades.</p>
+<details class="note">
+<summary>Nota para pessoas <strong>mais experiente</strong> sobre essa aula</summary>
+<p>O princípio por trás dessa aula é demonstrar como construir os endpoints e os testes mais básicos possíveis.</p>
+<p>Talvez lhe cause estranhamento o uso de um banco de dados em uma lista e os testes sendo construídos a partir de efeitos colaterais. Mas o objetivo principal é que as pessoas consigam se concentrar na criação dos primeiros testes sem muito atrito.</p>
+<p>Estas questões serão resolvidas nas aulas seguintes.</p>
+</details>
 <h2 id="crud-e-http">CRUD e HTTP</h2>
 <p>No desenvolvimento de APIs, existem quatro ações principais que fazemos com os dados: criar, ler, atualizar e excluir. Essas ações ajudam a gerenciar os dados no banco de dados e na aplicação web. Vamos nos focar nesse primeiro momento nas relações entre os dados.</p>
 <p>CRUD é um acrônimo que representa as quatro operações básicas que você pode realizar em qualquer banco de dados persistente:</p>
@@ -2518,6 +2545,12 @@
 </span><span id="__span-25-39"><a id="__codelineno-25-39" name="__codelineno-25-39"></a>    <span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Com as rotas POST e GET implementadas, agora podemos criar e recuperar usuários. Implementaremos a próxima operação CRUD: Update.</p>
+<div class="admonition warning">
+<p class="admonition-title">Coisas que devemos considerar sobre este e os próximos testes</p>
+<p>Note que para que esse teste seja executado com sucesso o teste do endpoint de <code>POST</code> tem que ser executado antes. Isso é problemático no mundo dos testes. Pois cada teste deve estar isolado e não depender da execução de nada externo a ele.</p>
+<p>Para que isso aconteça, precisaremos de um mecanismo que reinicie o banco de dados a cada teste, mas ainda não temos um banco de dados real. O banco de dados será introduzido na aplicação na <a href="04/md">aula 04</a></p>
+<p>O mecanismo que fará com que os testes não interfiram em outros e sejam independentes será introduzido na <a href="../05/#testando-o-endpoint-post-users-com-pytest-e-fixtures">aula 05</a>.</p>
+</div>
 <h2 id="implementando-a-rota-put">Implementando a Rota PUT</h2>
 <p>A rota PUT é usada para atualizar as informações de um usuário existente. No contexto do CRUD, o verbo HTTP PUT está associado à operação "Update". Se a solicitação for bem-sucedida, a rota deve retornar o status HTTP 200 (OK). No entanto, se o usuário solicitado não for encontrado, deveríamos retornar o status HTTP 404 (Não Encontrado).</p>
 <p>Uma característica importante do verbo PUT é que ele é direcionado a um recurso em específico. Nesse caso, estamos direcionando a alteração a um <code>user</code> em específico na base de dados. O identificador de <code>user</code> é o campo <code>id</code> que estamos usando nos modelos do Pydantic. Nesse caso, nosso endpoint deve receber o identificador de quem será alterado.</p>
@@ -2664,9 +2697,10 @@
 </ol>
 <p><a class="md-button" href="../exercicios_resolvidos/aula_03/">Exercícios resolvidos <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M3 7V5h2V4a2 2 0 0 1 2-2h6v7l2.5-1.5L18 9V2h1c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm4 4H5v2h2zm0-4V5H5v2zm0 12v-2H5v2z"></path></svg></span></a></p>
 <h2 id="conclusao">Conclusão</h2>
-<p>Com a implementação bem-sucedida das rotas CRUD, demos um passo significativo na construção de uma API robusta e funcional com FastAPI. Agora podemos manipular usuários - criar, ler, atualizar e excluir - o que é fundamental para muitos sistemas de informação.</p>
+<p>Com a implementação bem-sucedida das rotas CRUD, demos um passo significativo na construção de uma funcional com FastAPI. Agora podemos manipular usuários - criar, ler, atualizar e excluir - o que é fundamental para muitos sistemas de informação.</p>
 <p>O papel dos testes em cada etapa não pode ser subestimado. Testes não apenas nos ajudam a assegurar que nosso código está funcionando como esperado, mas também nos permitem refinar nossas soluções e detectar problemas potenciais antes que eles afetem a funcionalidade geral do nosso sistema. Nunca subestime a importância de executar seus testes sempre que fizer uma alteração em seu código!</p>
 <p>Até aqui, no entanto, trabalhamos com um "banco de dados" provisório, na forma de uma lista Python, que é volátil e não persiste os dados de uma execução do aplicativo para outra. Para nosso aplicativo ser útil em um cenário do mundo real, precisamos armazenar nossos dados de forma mais duradoura. É aí que os bancos de dados entram.</p>
+<p>Outro ponto que deve ser destacado é que nossas implementações de testes sofrem interferência dos testes anteriores. Testes devem funcionar de forma isolada, sem a dependência de um teste anterior. Vamos ajustar isso no futuro.</p>
 <p>No próximo tópico, exploraremos uma das partes mais críticas de qualquer aplicativo - a conexão e interação com um banco de dados. Aprenderemos a integrar nosso aplicativo FastAPI com um banco de dados real, permitindo a persistência de nossos dados de usuário entre as sessões do aplicativo.</p>
 <hr>
 <p>Agora que a aula acabou, é um bom momento para você relembrar alguns conceitos e fixar melhor o conteúdo respondendo ao questionário referente a ela.</p>
@@ -2801,7 +2835,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 6, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 7, 2024</span>
   </span>
 
     
