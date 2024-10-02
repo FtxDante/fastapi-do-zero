@@ -2413,7 +2413,7 @@
 <li>Nessa validação é testada se o token é um token JWT válido. Caso não seja, o erro também será levantado.</li>
 <li>Nossa última validação checa, após de garantir que existe <code>username</code>, se ele está presente em nossa base de dados. Caso não, o erro será levantado. </li>
 </ol>
-<p>Aqui, a função <code>get_current_user</code> é definida como assíncrona, indicando que ela pode realizar operações de IO (como consultar um banco de dados) de forma não bloqueante. Esta função aceita dois argumentos: <code>session</code> e <code>token</code>. O <code>session</code> é obtido através da função <code>get_session</code> (não mostrada aqui), que deve retornar uma sessão de banco de dados ativa. O <code>token</code> é obtido do header de autorização da requisição, que é esperado ser do tipo Bearer (indicado pelo esquema OAuth2).</p>
+<p>Aqui, a função <code>get_current_user</code> aceita dois argumentos: <code>session</code> e <code>token</code>. O <code>session</code> é obtido através da função <code>get_session</code> (não mostrada aqui), que deve retornar uma sessão de banco de dados ativa. O <code>token</code> é obtido do header de autorização da requisição, que é esperado ser do tipo Bearer (indicado pelo esquema OAuth2).</p>
 <p>A variável <code>credentials_exception</code> é definida como uma exceção HTTP que será lançada sempre que houver um problema com as credenciais fornecidas pelo usuário. O status 401 indica que a autenticação falhou e a mensagem "Could not validate credentials" é retornada ao cliente. Além disso, um cabeçalho 'WWW-Authenticate' é incluído na resposta, indicando que o cliente deve fornecer autenticação.</p>
 <p>No bloco <code>try</code>, tentamos decodificar o token JWT usando a chave secreta e o algoritmo especificado. O token decodificado é armazenado na variável <code>payload</code>. Extraímos o campo 'sub' (normalmente usado para armazenar o identificador do usuário no token JWT) e verificamos se ele existe. Se não, lançamos a exceção <code>credentials_exception</code>. Em seguida, criamos um objeto <code>TokenData</code> com o username.</p>
 <p>Por fim, realizamos uma consulta ao banco de dados para encontrar o usuário com o e-mail correspondente ao username contido no token. <code>session.scalar</code> é usado para retornar a primeira coluna do primeiro resultado da consulta. Se nenhum usuário for encontrado, lançamos a exceção <code>credentials_exception</code>. Se um usuário for encontrado, retornamos esse usuário.</p>
@@ -2752,7 +2752,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">7 de setembro de 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2 de outubro de 2024</span>
   </span>
 
     
