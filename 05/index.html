@@ -2143,7 +2143,7 @@
 </span></code></pre></div>
 <p>Porém, é claro, queremos também testar o caso em que existem usuários no banco. Para isso, criaremos uma nova fixture que cria um usuário em nosso banco de dados de teste.</p>
 <h3 id="criando-uma-fixture-para-user">Criando uma fixture para User</h3>
-<p>Para criar essa fixture, aproveitaremos a nossa fixture de sessão do SQLAlchemy, e criar um novo usuário dentro dela:</p>
+<p>Para criar essa fixture, aproveitaremos a nossa fixture de sessão do SQLAlchemy, e criaremos um novo usuário a partir dela:</p>
 <div class="language-python highlight"><span class="filename">tests/conftest.py</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span> <span class="nn">fast_zero.models</span> <span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">table_registry</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1"># ...</span>
@@ -2181,8 +2181,8 @@
 <p>No entanto, mesmo que nosso código pareça correto, podemos encontrar um problema: o Pydantic não consegue converter diretamente nosso modelo SQLAlchemy para um modelo Pydantic. Resolveremos isso agora.</p>
 <h3 id="integrando-o-schema-ao-model">Integrando o Schema ao Model</h3>
 <p>A integração direta do ORM com o nosso esquema Pydantic não é imediata e exige algumas modificações. O Pydantic, por padrão, não sabe como lidar com os modelos do SQLAlchemy, o que nos leva ao erro observado nos testes.</p>
-<p>A solução para esse problema passa por fazer uma alteração no esquema <code>UserPublic</code> que utilizamos, para que ele possa reconhecer e trabalhar com os modelos do SQLAlchemy. Isso permite que os objetos do SQLAlchemy sejam convertidos corretamente para os esquemas Pydantic.</p>
-<p>Para resolver o problema de conversão entre SQLAlchemy e Pydantic, precisamos atualizar o nosso esquema <code>UserPublic</code> para que ele possa reconhecer os modelos do SQLAlchemy. Para isso, adicionaremos a linha <code>model_config = ConfigDict(from_attributes=True)</code> ao nosso esquema:</p>
+<p>A solução para esse problema é fazer uma alteração no esquema <code>UserPublic</code> que utilizamos, para que ele possa reconhecer e trabalhar com os modelos do SQLAlchemy. Isso permite a conversão direta de objetos do SQLAlchemy em esquemas Pydantic.</p>
+<p>Para isso, adicionaremos a linha <code>model_config = ConfigDict(from_attributes=True)</code> ao nosso esquema:</p>
 <div class="language-py highlight"><span class="filename">fast_zero/schemas.py</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">ConfigDict</span><span class="p">,</span> <span class="n">EmailStr</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="c1"># ...</span>
@@ -2193,7 +2193,7 @@
 </span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>    <span class="n">email</span><span class="p">:</span> <span class="n">EmailStr</span>
 </span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="hll">    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">from_attributes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></span></code></pre></div>
-<p>Com essa mudança, nosso esquema Pydantic agora pode ser convertido a partir de um modelo SQLAlchemy. Agora podemos executar nosso teste novamente e verificar se ele está passando.</p>
+<p>Dessa forma a conversão entre modelos e schemas pode acontecer. Vamos executar os testes para validar:</p>
 <div class="language-shell highlight"><span class="filename">$ Execução no terminal!</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>task<span class="w"> </span><span class="nb">test</span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="c1"># ...</span>
@@ -2600,7 +2600,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">3 de outubro de 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">5 de outubro de 2024</span>
   </span>
 
     
