@@ -2276,10 +2276,10 @@
 <p><code>table_registry.metadata.create_all(engine)</code>: cria todas as tabelas no banco de dados de teste antes de cada teste que usa a fixture <code>session</code>.</p>
 </li>
 <li>
-<p><code>Session(engine)</code>: cria uma sessão <code>Session</code> para que os testes possam se comunicar com o banco de dados. Por conta do <code>yield</code> a sessão é sempre renovada após cada teste.</p>
+<p><code>Session(engine)</code>: cria uma sessão <code>Session</code> para que os testes possam se comunicar com o banco de dadosvia <code>engine</code>.</p>
 </li>
 <li>
-<p><code>yield Session()</code>: fornece uma instância de Session que será injetada em cada teste que solicita a fixture <code>session</code>. Essa sessão será usada para interagir com o banco de dados de teste.</p>
+<p><code>yield session</code>: fornece uma instância de Session que será injetada em cada teste que solicita a fixture <code>session</code>. Essa sessão será usada para interagir com o banco de dados de teste.</p>
 </li>
 <li>
 <p><code>table_registry.metadata.drop_all(engine)</code>: após cada teste que usa a fixture <code>session</code>, todas as tabelas do banco de dados de teste são eliminadas, garantindo que cada teste seja executado contra um banco de dados limpo.</p>
@@ -2365,7 +2365,7 @@
      A[Hook - before_insert] --&gt; B[insert]
    end</code></pre>
 <p>Um <em>hook</em> é basicamente uma função python que registramos como um evento no sqlalchemy. Nesse caso, como queremos um evento de insert, devemos fornecer o modelo que queremos que seja atrelado ao evento:</p>
-<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Código de exemplo</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Código de exemplo</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>
 <span class="normal"><a href="#__codelineno-10-3">3</a></span>
 <span class="normal"><a href="#__codelineno-10-4">4</a></span>
@@ -2921,7 +2921,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">5 de outubro de 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">6 de outubro de 2024</span>
   </span>
 
     

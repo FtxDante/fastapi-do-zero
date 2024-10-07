@@ -1968,6 +1968,7 @@
 <li>Deixando em <code>fast_zero/security.py</code> somente as validações de senha</li>
 <li>Remover constantes usados em código (<code>SECRET_KEY</code>, <code>ALGORITHM</code> e <code>ACCESS_TOKEN_EXPIRE_MINUTES</code>) usando a classe Settings do arquivo <code>fast_zero/settings.py</code> que já temos e movendo para variáveis de ambiente no arquivo <code>.env</code></li>
 <li>Criar routers específicos para rotas que tratam das funcionalidades de usuários e para as rotas de autenticação</li>
+<li>Criação de um modelo pydantic para querys</li>
 </ul>
 <details class="tip">
 <summary>Caso prefira ver a aula em vídeo</summary>
@@ -2677,7 +2678,7 @@
 <h2 id="parametros-de-query-via-pydantic">Parâmetros de query via Pydantic</h2>
 <p>Agora que conhecemos o tipo <code>Annotated</code>, podemos introduzir um novo conceito para as querystrings. No endpoint de listagem, estamos passando parâmetros específicos na URL para paginar a quantidade de objetos.</p>
 <p>Com <code>skip</code> e <code>offset</code>. Reduzindo a quantidade de objetos na resposta:</p>
-<div class="language-py highlight"><span class="filename">fast_zero/routers/users.py</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">UserList</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">fast_zero/routers/users.py</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">UserList</span><span class="p">)</span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="k">def</span> <span class="nf">read_users</span><span class="p">(</span>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="hll">    <span class="n">skip</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_session</span><span class="p">)</span>
 </span></span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">):</span>
@@ -2686,7 +2687,7 @@
 </span></code></pre></div>
 <p>Embora isso não seja efetivamente um problema, parâmetros de <code>offset</code> e <code>limit</code> são bastante genéricos e podem ser usados em qualquer endpoint que precisar de paginação.</p>
 <p>Uma boa pratica de organização é seria um modelo do pydantic especializado em filtros, como:</p>
-<div class="language-py highlight"><span class="filename">fast_zero/schemas.py</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">class</span> <span class="nc">FilterPage</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<div class="language-python highlight"><span class="filename">fast_zero/schemas.py</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">class</span> <span class="nc">FilterPage</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span>
 </span></code></pre></div>
@@ -2694,7 +2695,7 @@
 <h3 id="implementacao-de-querystrings-via-pydantic">Implementação de querystrings via Pydantic</h3>
 <p>Uma das formas de remover a declaração de todos os parâmetros explicitamente da query no endpoint é usar nosso modelo com o objeto <code>Query</code> do FastAPI.</p>
 <p>Dessa forma podemos anotar o modelo do pydantic junto o objeto <code>Query</code>. Fazendo com que ele se torne um filtro:</p>
-<div class="language-py highlight"><span class="filename">fast_zero/routers/users.py</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="hll"><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">APIRouter</span><span class="p">,</span> <span class="n">Depends</span><span class="p">,</span> <span class="n">HTTPException</span><span class="p">,</span> <span class="n">Query</span>
+<div class="language-python highlight"><span class="filename">fast_zero/routers/users.py</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="hll"><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">APIRouter</span><span class="p">,</span> <span class="n">Depends</span><span class="p">,</span> <span class="n">HTTPException</span><span class="p">,</span> <span class="n">Query</span>
 </span></span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="c1"># ...</span>
 </span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
@@ -2981,7 +2982,7 @@ function resetFieldset(fieldset) {
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">3 de outubro de 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">7 de outubro de 2024</span>
   </span>
 
     
